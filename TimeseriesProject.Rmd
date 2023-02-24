@@ -47,7 +47,7 @@ hour <- read.csv("hour.csv")
 head(day)
 ```
 
-## 1)a)
+
 
 ###  Distribution de temperatures en fonction des saisons:
 
@@ -83,8 +83,6 @@ median(day$temp)
 ```
 
 On a une temperature moyenne de 0.49538 et une mediane de 0.49833.
-
-## 1)b) 
 
 ### Correlation entre la temperature temp et le nombre total de location de vélos cnt:
 
@@ -147,7 +145,6 @@ cor.test(day$mean_temp_atemp, day$cnt, method=c("pearson", "kendall", "spearman"
 On obtient un resulat similaire avec un coefficient de correlation est de 0.6305, et une p-value inférieure a 5%, ce qui veut dire que la correlation est statistiquement significative.
 
 
-## 1)c)
 
 ### Temperatures moyennes par mois:
 
@@ -200,7 +197,6 @@ ggplot(data = Total_moyen, mapping = aes(x = Group.1, y = x)) +
 
 ```
 
-## 1)d)
 
 ### correlation temp et les locations de vélos:
 
@@ -228,9 +224,8 @@ cor.test(day$temp, day$casual, method=c("pearson", "kendall", "spearman"))
 On constate que l'on a un coefficient de corrélation de 0.54 pour registered (et 0.543 pour registered) , ce qui n'est pas tres élevé.On a une p-value inférieure a 5%, donc la correlation est statistiquement significative.
 
 
-### Dans ce qui suit, nous allons construire un modele prédictif du nombre de locations de vélos par jour:
+#### Dans ce qui suit, nous allons construire un modele prédictif du nombre de locations de vélos par jour:
 
-## 1)e)
 
 On cree une timeseries de la valiable cnt,qui commence le 1er janvier 2011 et qui a pour frequence 365 (car on a des informations journalieres)
 
@@ -247,7 +242,7 @@ plot(counttscomponents)
 
 On remarque une tendance croissante, et on peut apercevoir deux saisons. La composante random, elle, n'est pas du tout stationnaire autours de 0 et ne forme pas un bruit blanc.
 
-## 1)f) Enlever les outliers:
+##  Enlever les outliers:
 
 Pour enlever les outliers et les valuers manquantes de la time serie, on fait appel a la fonction `tsclean`:
 
@@ -316,7 +311,7 @@ plot.ts(cnt.ts.hw$fitted[,1])
 
 On remarque que la courbe qui resulte du lissage HoltWinters ne lisse pas assez bien l'entiereté de la série chronologique.
 
-## 2 Choisir la meilleure methode de lissage:
+##  Choisir la meilleure methode de lissage:
 
 Nous allons ajouter une fréquence aux deux séries lissées SMA et HoltWinters, puis nous analyserons les différences:
 
@@ -570,9 +565,8 @@ Empirical Model
 
 
 
-## Q4: Prédictions avec le modele ARIMA
+## Prédictions avec le modele ARIMA
 
-4)I)
 On enleve la saisonalité:
 
 ```{r enlever la saisonalite}
@@ -708,7 +702,6 @@ Si on cherche le loglikelihood le plus eleve et minimiser le AIC, le 3eme ARIMA(
 Si on veut se fier au principe de parsimonie, on prendra plutot le MA(1).
 
 
-## 4)II)
 
 On regarde le modele donné par auto.arima():
 
@@ -746,7 +739,7 @@ En termes de log likelihood et AIC ils sont tres similaires, donc on prend le mo
 
 
 
-## 4)III) Evaluer et Itérer:
+## Evaluer et Itérer:
 Comme vu précédemment, on avait trouvéun auto Arima peu complexe mais ses résidus ne formaient pas spécialement un bruit blanc, On peut donc essayer d'améliorer notre modele:
 On va commencer par entrainer 100 modeles ARIMA en iterant sur les valeurs de p et de q:
 
@@ -788,7 +781,6 @@ Box.test(adjforecasts15$residuals, lag=20, type="Ljung-Box")
 ```
 Ce modele a des residus qui se rapprochent le plus d'un bruit blanc.
 
-## 4)VI)
 
 On divise les datas en deux ensembles :
 
