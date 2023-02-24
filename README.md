@@ -6,3 +6,8 @@ Les systèmes de vélos en libre-service sont une nouvelle génération de locat
 Outre les applications intéressantes des systèmes de partage de vélos dans le monde réel, les caractéristiques des données générées par ces systèmes les rendent attrayantes pour la recherche. Contrairement à d'autres services de transport comme le bus ou le métro, la durée du trajet, la position de départ et d'arrivée sont explicitement enregistrées dans ces systèmes. Cette caractéristique transforme le système de vélo en libre-service en un réseau de capteurs virtuel qui peut être utilisé pour détecter la mobilité dans la ville. On s'attend donc à ce que la plupart des événements importants de la ville puissent être détectés par le biais de ces données.
 
 Ce jeu de données contient le nombre de vélos de location par heure et par jour entre 2011 et 2012 dans le système de partage de vélos Capital à Washington, DC, avec les informations météorologiques et saisonnières correspondantes.
+
+### Participantes au projet:
+Noor Khalal
+
+Jessica Fornetti
